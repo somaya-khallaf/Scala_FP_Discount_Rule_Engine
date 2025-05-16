@@ -35,6 +35,8 @@ object Calculation_Rules extends App {
   // File writer for output CSV
   val outputFile: File = new File("src/main/resources/calculated_discount.csv")
   val writer = new PrintWriter(new FileOutputStream(outputFile, true))
+  writer.write("timestamp,product_name,expiry_date,quantity,unit_price,channel,payment_method,discount,final_price\n")
+
 
   // Establish database connection
   val connection: Connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword)
