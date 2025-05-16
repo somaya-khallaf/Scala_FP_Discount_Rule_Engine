@@ -2,13 +2,25 @@
 
 A **functional programming** implementation of a discount rule engine for a retail store, built in **Scala**. This engine processes orders from CSV files, applies multiple discount rules, stores results in a **PostgreSQL** database, and logs operations to a file.
 
----
-
 ## Project Overview
 
 This discount rule engine processes retail transactions and automatically calculates discounts based on multiple qualifying rules. The engine is implemented using **functional programming principles** in Scala, ensuring **pure functions** and **immutable** data structures.
 
----
+## Project Structure
+
+```
+src/
+├── main/
+│   ├── scala/
+│   │   └── Project/
+│   │       └── Calculation_Rules.scala     # Main rule engine logic
+│   └── resources/
+│       ├── TRX1000.csv                     # Input file
+│       ├── calculated_discount.csv         # Output file
+│       └── rules_engine.log                # Log file
+
+```
+
 
 ## Technologies Used
 
@@ -17,8 +29,6 @@ This discount rule engine processes retail transactions and automatically calcul
 * **CSV:** Input/output via standard Scala libraries
 * **JDBC:** For PostgreSQL integration
 * **Logging:** Custom logging format to file
-
----
 
 ## Discount Rules
 
@@ -48,7 +58,6 @@ The engine implements the following discount rules:
 6. **Payment Method Discount**
    - 5% discount for Visa card payments
 
----
 
 ## Database Schema
 
@@ -69,8 +78,6 @@ CREATE TABLE calculated_discounts (
 );
 ```
 
----
-
 ## Setup Instructions
 
 ### Prerequisites
@@ -90,14 +97,12 @@ GRANT ALL PRIVILEGES ON DATABASE discount_db TO discount_user;
 
 The table `calculated_discounts` will be auto-created if it doesn’t exist.
 
----
-
 ## How to Run the Project
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/Scala_FP_Discount_Rule_Engine.git
+git clone https://github.com/somaya-khallaf/Scala_FP_Discount_Rule_Engine.git
 cd Scala_FP_Discount_Rule_Engine
 ```
 
@@ -122,27 +127,8 @@ sbt compile
 sbt run
 ```
 
----
-
 ## Output
 
 * `src/main/resources/calculated_discount.csv`: Final results with discounts applied
 * `src/main/resources/rules_engine.log`: Logs of all processing steps
 * `PostgreSQL`: Populated `calculated_discounts` table in `discount_db`
-
----
-
-## Project Structure
-
-```
-src/
-├── main/
-│   ├── scala/
-│   │   └── Project/
-│   │       └── Calculation_Rules.scala     # Main rule engine logic
-│   └── resources/
-│       ├── TRX1000.csv                     # Input file
-│       ├── calculated_discount.csv         # Output file
-│       └── rules_engine.log                # Log file
-
-```
