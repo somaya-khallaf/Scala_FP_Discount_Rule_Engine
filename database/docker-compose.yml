@@ -1,0 +1,20 @@
+services:
+  postgres_db:
+    image: postgres:13
+    container_name: discount_rule_db
+    hostname: discount_db
+    environment:
+      POSTGRES_USER: discount_user
+      POSTGRES_DB: discount_db
+      POSTGRES_PASSWORD: discount_pass 
+    ports:
+      - "5432:5432"  
+    volumes:
+      - discount_data:/var/lib/postgresql/data  
+
+networks:
+  discount_net:  
+    driver: bridge
+
+volumes:
+  discount_data:
