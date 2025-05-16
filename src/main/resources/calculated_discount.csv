@@ -1,3 +1,4 @@
+timestamp,product_name,expiry_date,quantity,unit_price,channel,payment_method,discount,final_price
 2023-04-18T18:18:40Z,Wine - White Pinot Grigio,2023-06-10,6,122.47,Store,Visa,5,698.079
 2023-04-09T20:17:37Z,Pepper - Red Thai,2023-05-22,5,23.18,Store,Cash,0,115.9
 2023-05-09T13:28:27Z,Wine - Chardonnay Mondavi,2023-08-04,7,189.74,Store,Cash,5,1261.771
